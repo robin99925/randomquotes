@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Awesome Quotes</title>
+  </head>
+  <body>
+    <div class="main">
+      <div class="second_div">
+        <div class="first_div">
+          <i
+            class="fa fa-quote-left"
+            style="font-size: 48px; color: rgba(20, 8, 8, 0.207)"
+          ></i>
+          <p class="text" id="text"></p>
+          <p class="author" id="author"></p>
+        </div>
+        <button class="btn" onclick="getNewQuote()">newQuote</button>
+      </div>
+    </div>
+  </body>
+  <script>
+    let jsonData = "";
+    let text = document.getElementById("text");
+    let author = document.getElementById("author");
+    const getNewQuote = () => {
+      let rnum = Math.floor(Math.random() * 100);
+      let textt = jsonData[rnum].author;
+      text.innerText = jsonData[rnum].text;
+      if (textt == null) {
+        author.innerText = `By SomeOne`;
+      } else {
+        author.innerText = `By ${textt}`;
+      }
+    };
+    const getData = async () => {
+      const api = "https://type.fit/api/quotes";
+      try {
+        const data = await fetch(api);
+        jsonData = await data.json();
+        getNewQuote();
+
+        // console.log(jsonData[6].text);
+      } catch (err) {
+        console.log(err);
+      }
+    };
+    getData();
+  </script>
+</html>

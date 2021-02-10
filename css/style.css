@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
+*{
+    margin: 0px; padding: 0px; list-style: none; box-sizing: border-box;
+}
+.main{
+    background-image: url(../pic/bk.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second_div{
+    width: 550px;
+    height: 380px;
+    background-color: rgba(16, 26, 26, 0.262);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height: 100vh; */
+}
+.first_div{
+    width: 400px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.51)
+
+}
+.text{
+    margin-left: 15px;
+    font-size: 36px;
+    font-family: 'Hammersmith One', sans-serif;
+}
+.author{
+    font-family: 'Hammersmith One', sans-serif;
+    color:rgba(20, 4, 4, 0.221);
+    float: right;
+    font-size: 25px;
+}
+.btn{
+    font-family: 'Hammersmith One', sans-serif;
+    justify-content: flex-end;
+    position: fixed;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    margin-top: 270px;
+    cursor: pointer;
+    background-color: rgb(255, 210, 127);
+    float: right;
+    width: 400px;
+    line-height: 30px;
+  
+    
+}
+@media(max-width:552px){
+    .second_div{
+        background: none;
+    }
+
+}
